@@ -11,8 +11,8 @@ function Titulo(props) {
       <style jsx>{`
         ${Tag} {
           color: ${appConfig.theme.colors.neutrals["000"]};
-          font-size: 24px;
-          font-weight: 600;
+          font-size: 36px;
+          font-weight: 500;
         }
       `}</style>
     </>
@@ -29,12 +29,12 @@ function Titulo(props) {
 //             <h2>Discord - Alura Matrix</h2>
 //         </div>
 //     )
-// }
+//
 // export default HomePage
 
 export default function PaginaInicial() {
   // const username = 'omariosouto';
-  const [username, setUsername] = React.useState("omariosouto");
+  const [username, setUsername] = React.useState("Git");
   const roteamento = useRouter();
 
   return (
@@ -44,9 +44,9 @@ export default function PaginaInicial() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: appConfig.theme.colors.primary[500],
+          backgroundColor: "#b9d2ff",
           backgroundImage:
-            "url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)",
+            "url(https://i.pinimg.com/originals/e1/b9/c5/e1b9c5f696d6f136c3eca1b26ac8c846.gif)",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundBlendMode: "multiply",
@@ -63,11 +63,12 @@ export default function PaginaInicial() {
             },
             width: "100%",
             maxWidth: "700px",
-            borderRadius: "5px",
+            borderRadius: "2px",
+            border: "10px black solid",
             padding: "32px",
             margin: "16px",
             boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",
-            backgroundColor: appConfig.theme.colors.neutrals[700],
+            backgroundColor: appConfig.theme.colors.neutrals[600],
           }}
         >
           {/* Formulário */}
@@ -86,6 +87,7 @@ export default function PaginaInicial() {
               justifyContent: "center",
               width: { xs: "100%", sm: "50%" },
               textAlign: "center",
+
               marginBottom: "32px",
             }}
           >
@@ -94,6 +96,9 @@ export default function PaginaInicial() {
               variant="body3"
               styleSheet={{
                 marginBottom: "32px",
+                fontFamily: "",
+                fontSize: "19px",
+                backgroundColor: appConfig.theme.colors.neutrals[500],
                 color: appConfig.theme.colors.neutrals[300],
               }}
             >
@@ -122,6 +127,11 @@ export default function PaginaInicial() {
                 // através do React e avise quem precisa
                 setUsername(valor);
               }}
+              styleSheet={{
+                fontSize: "50px",
+                borderRadius: "2px",
+                border: "black 6px solid",
+              }}
               fullWidth
               textFieldColors={{
                 neutral: {
@@ -134,13 +144,20 @@ export default function PaginaInicial() {
             />
             <Button
               type="submit"
-              label="Entrar"
+              label="VAMOS LÁ ?"
               fullWidth
               buttonColors={{
-                contrastColor: appConfig.theme.colors.neutrals["000"],
-                mainColor: appConfig.theme.colors.primary[500],
-                mainColorLight: appConfig.theme.colors.primary[400],
-                mainColorStrong: appConfig.theme.colors.primary[600],
+                contrastColor: appConfig.theme.colors.neutrals["100"],
+                mainColor: appConfig.theme.colors.primary[1000],
+                mainColorLight: appConfig.theme.colors.primary[100],
+                mainColorStrong: appConfig.theme.colors.primary[300],
+                mainColorHighlight: appConfig.theme.colors.primary[500],
+              }}
+              styleSheet={{
+                color: "black",
+                padding: "30px",
+                borderRadius: "2px",
+                border: "black 5px solid",
               }}
             />
           </Box>
@@ -155,9 +172,9 @@ export default function PaginaInicial() {
               maxWidth: "200px",
               padding: "16px",
               backgroundColor: appConfig.theme.colors.neutrals[800],
-              border: "1px solid",
+              border: "4px solid",
               borderColor: appConfig.theme.colors.neutrals[999],
-              borderRadius: "10px",
+              borderRadius: "2px",
               flex: 1,
               minHeight: "240px",
             }}
@@ -166,6 +183,7 @@ export default function PaginaInicial() {
               styleSheet={{
                 borderRadius: "50%",
                 marginBottom: "16px",
+                border: "black 4px solid",
               }}
               src={`https://github.com/${username}.png`}
             />
@@ -176,6 +194,8 @@ export default function PaginaInicial() {
                 backgroundColor: appConfig.theme.colors.neutrals[900],
                 padding: "3px 10px",
                 borderRadius: "1000px",
+                fontFamily: "",
+                fontSize: "40px",
               }}
             >
               {username}
