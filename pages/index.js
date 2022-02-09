@@ -19,19 +19,6 @@ function Titulo(props) {
   );
 }
 
-// Componente React
-// function HomePage() {
-//     // JSX
-//     return (
-//         <div>
-//             <GlobalStyle />
-//             <Titulo tag="h2">Boas vindas de volta!</Titulo>
-//             <h2>Discord - Alura Matrix</h2>
-//         </div>
-//     )
-//
-// export default HomePage
-
 export default function PaginaInicial() {
   // const username = 'omariosouto';
   const [username, setUsername] = React.useState("Git");
@@ -154,6 +141,8 @@ export default function PaginaInicial() {
                 mainColorHighlight: appConfig.theme.colors.primary[500],
               }}
               styleSheet={{
+                fontFamily: "",
+                fontSize: "50px",
                 color: "black",
                 padding: "30px",
                 borderRadius: "2px",
@@ -161,6 +150,7 @@ export default function PaginaInicial() {
               }}
             />
           </Box>
+
           {/* Formulário */}
 
           {/* Photo Area */}
@@ -181,9 +171,11 @@ export default function PaginaInicial() {
           >
             <Image
               styleSheet={{
-                borderRadius: "50%",
+                marginTop: "-10px",
+                borderRadius: "2px",
                 marginBottom: "16px",
                 border: "black 4px solid",
+                backgroundColor: "#b9d2ff",
               }}
               src={`https://github.com/${username}.png`}
             />
@@ -192,13 +184,26 @@ export default function PaginaInicial() {
               styleSheet={{
                 color: appConfig.theme.colors.neutrals[200],
                 backgroundColor: appConfig.theme.colors.neutrals[900],
-                padding: "3px 10px",
-                borderRadius: "1000px",
+                padding: "3px 1px",
+                borderRadius: "2px",
                 fontFamily: "",
                 fontSize: "40px",
               }}
             >
               {username}
+            </Text>
+            <Text
+              variant="body5"
+              styleSheet={{
+                color: appConfig.theme.colors.neutrals[200],
+                backgroundColor: appConfig.theme.colors.neutrals[400],
+                marginTop: "5px",
+                borderRadius: "2px",
+                fontFamily: "",
+                fontSize: "50px",
+              }}
+            >
+              Lv.
             </Text>
           </Box>
           {/* Photo Area */}
