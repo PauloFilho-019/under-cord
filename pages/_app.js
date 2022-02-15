@@ -8,13 +8,13 @@ function GlobalStyle() {
         padding: 0;
         box-sizing: border-box;
         list-style: none;
+        font-family: "VT323", monospace !important;
       }
       body {
-        font-family: "VT323", monospace;
       }
 
-      label {
-        font-family: "Press Start 2P", cursive;
+      button {
+        font-size: 50px !important;
       }
       /* App fit Height */
       html,

@@ -22,7 +22,21 @@ function Titulo(props) {
 export default function PaginaInicial() {
   // const username = 'omariosouto';
   const [username, setUsername] = React.useState("Git");
+  const [followers, setFollowers] = React.useState(0);
+
   const roteamento = useRouter();
+
+  React.useEffect(() => {
+    const getFoll = async () => {
+      const response = await fetch(
+        `https://api.github.com/users/${username}/followers`
+      );
+      const foll = await response.json();
+      setFollowers(foll.length);
+    };
+    getFoll();
+    //return (await response.json()).length;
+  }, [username]);
 
   return (
     <>
@@ -31,7 +45,7 @@ export default function PaginaInicial() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#b9d2ff",
+          backgroundColor: appConfig.theme.colors.primary[50],
           backgroundImage:
             "url(https://i.pinimg.com/originals/e1/b9/c5/e1b9c5f696d6f136c3eca1b26ac8c846.gif)",
           backgroundRepeat: "no-repeat",
@@ -203,7 +217,7 @@ export default function PaginaInicial() {
                 fontSize: "50px",
               }}
             >
-              Lv.
+              Lv. {followers}
             </Text>
           </Box>
           {/* Photo Area */}
