@@ -90,14 +90,14 @@ export default function ChatPage() {
     >
       <Box
         styleSheet={{
-          marginTop: "-20px",
+          marginTop: "-60px",
           display: "flex",
           flexDirection: "column",
           flex: 1,
           height: "100%",
-          maxWidth: "95%",
-          maxHeight: "95vh",
-          padding: "32px",
+          maxWidth: "65%",
+          maxHeight: "109vh",
+          padding: "50px",
         }}
       >
         <Header />
@@ -106,7 +106,8 @@ export default function ChatPage() {
             position: "relative",
             display: "flex",
             flex: 1,
-            height: "80%",
+
+            height: "90%",
             borderRadius: "4px",
             border: "black 6px solid",
             backgroundColor: appConfig.theme.colors.neutrals[500],
@@ -147,17 +148,16 @@ export default function ChatPage() {
               styleSheet={{
                 width: "100%",
                 border: "0",
-                fontSize: "25px",
+                fontSize: "35px",
                 resize: "none",
                 border: "4px solid",
-                borderColor: appConfig.theme.colors.neutrals[200],
+                borderColor: appConfig.theme.colors.neutrals[600],
                 borderRadius: "2px",
                 padding: "30px 8px",
                 backgroundColor: appConfig.theme.colors.neutrals[400],
                 marginRight: "9px",
                 marginLeft: "-12px",
                 marginBottom: "-20px",
-                color: appConfig.theme.colors.neutrals[200],
               }}
             />
             {/* CallBack */}
@@ -210,6 +210,7 @@ function MessageList(props) {
         flex: 1,
         color: appConfig.theme.colors.neutrals["000"],
         marginBottom: "16px",
+        margin: 2,
       }}
     >
       {props.mensagens.map((mensagem) => {
@@ -218,11 +219,12 @@ function MessageList(props) {
             key={mensagem.id}
             tag="li"
             styleSheet={{
+              fontSize: " 24px",
               borderRadius: "5px",
               padding: "6px",
               marginBottom: "12px",
               hover: {
-                backgroundColor: appConfig.theme.colors.neutrals[700],
+                backgroundColor: appConfig.theme.colors.neutrals[500],
               },
             }}
           >
@@ -233,18 +235,29 @@ function MessageList(props) {
             >
               <Image
                 styleSheet={{
-                  width: "20px",
-                  height: "20px",
+                  width: "35px",
+                  height: "35px",
                   borderRadius: "50%",
                   display: "inline-block",
                   marginRight: "8px",
                 }}
                 src={`https://github.com/${mensagem.from}.png`}
               />
-              <Text tag="strong">{mensagem.from}</Text>
+              <Text
+                tag="strong"
+                styleSheet={{
+                  backgroundColor: "#66B2FF",
+                  paddingLeft: "4px",
+                  paddingRight: "4px",
+                  border: "4px solid black",
+                  fontSize: "36px",
+                }}
+              >
+                {mensagem.from}
+              </Text>
               <Text
                 styleSheet={{
-                  fontSize: "10px",
+                  fontSize: "30px",
                   marginLeft: "8px",
                   color: appConfig.theme.colors.neutrals[300],
                 }}
@@ -259,7 +272,8 @@ function MessageList(props) {
               <Image
                 src={mensagem.text.replace(":sticker:", "")}
                 styleSheet={{
-                  width: "50%",
+                  margin: "20px",
+                  width: "20%",
                 }}
               />
             ) : (
